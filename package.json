@@ -1,7 +1,7 @@
 {
-  "name": "spring-react-skeleton",
+  "name": "react-boilerplate",
   "version": "1.0.0",
-  "description": "This project is a React SpringBoot that you simply start working on project right away",
+  "description": "This project is a ReactJS that you simply start working on project right away",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -40,9 +40,9 @@ module.exports = merge(baseConfig, {
 	devServer: {
 		inline: true,
 		port: devPort,
-		contentBase: path.resolve(__dirname, 'dev'),
+		contentBase: path.resolve(__dirname, 'public'),
 		hot: true,
-		publicPath: app['public-url'],
+		publicPath: publicUrl,
 		historyApiFallback: true,
 		host,
 		open: true,

@@ -11,7 +11,6 @@ const config = yaml.safeLoad(fs.readFileSync(path.join(CONF_PATH, 'app.yml')), '
 
 const { app } = config;
 
-const publicURL = app['public-url'];
 const isProduction = process.env.NODE_ENV === 'production';
 
 const paletteLess = fs.readFileSync('./src/styles/core/theme.less', 'utf8');
@@ -100,7 +99,7 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.DefinePlugin({
-			PUBLIC_URL: isProduction ? JSON.stringify(publicURL) : JSON.stringify('/'),
+			PUBLIC_URL: isProduction ? JSON.stringify(app.publicUrl) : JSON.stringify('/'),
 		}),
 		new HtmlWebpackPlugin({
 			filename: 'index.html',

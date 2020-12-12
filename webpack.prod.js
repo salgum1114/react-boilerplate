@@ -11,6 +11,8 @@ const baseConfig = require('./webpack.common.js');
 const CONF_PATH = path.join(__dirname, 'config');
 const config = yaml.safeLoad(fs.readFileSync(path.join(CONF_PATH, 'app.yml')), 'utf8');
 
+fs.copySync('public', 'dist');
+
 const { app } = config;
 
 const plugins = [

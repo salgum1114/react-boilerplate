@@ -1,0 +1,9 @@
+app:
+    port: 8081
+    host: localhost
+    publicUrl: /
+
+server:
+    enabled: false
+    http: http://localhost:8080
+    ws: ws://localhost:8080

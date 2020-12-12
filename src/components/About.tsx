@@ -1,0 +1,55 @@
+import ReactEcharts from 'echarts-for-react';
+import React from 'react';
+
+const data = [] as any[];
+
+for (let i = 0; i <= 360; i++) {
+	const t = (i / 180) * Math.PI;
+	const r = Math.sin(2 * t) * Math.cos(2 * t);
+	data.push([r, i]);
+}
+
+const About = () => {
+	return (
+		<div>
+			<ReactEcharts
+				option={{
+					title: {
+						text: '极坐标双数值轴',
+					},
+					legend: {
+						data: ['line'],
+					},
+					polar: {
+						center: ['50%', '54%'],
+					},
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'cross',
+						},
+					},
+					angleAxis: {
+						type: 'value',
+						startAngle: 0,
+					},
+					radiusAxis: {
+						min: 0,
+					},
+					series: [
+						{
+							coordinateSystem: 'polar',
+							name: 'line',
+							type: 'line',
+							showSymbol: false,
+							data,
+						},
+					],
+					animationDuration: 2000,
+				}}
+			/>
+		</div>
+	);
+};
+
+export default About;
